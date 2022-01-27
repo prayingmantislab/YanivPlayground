@@ -6,14 +6,13 @@ class Demo2ChildComp extends Component {
     super(props);
   }
 
-  
   render() {
      
     return(
       <div>
       <h4>Child Component:</h4>
-      <input type='button' value='message from your child' onClick={()=>this.props.callback('feed me dady')}/>
-      <h4>Child Comp footetr:</h4>
+      <input type='button' value='send data to parent' onClick={()=>this.props.callback('feed me dady')}/>
+      <h4>Child Comp footetr</h4>
       </div>
     )
   }

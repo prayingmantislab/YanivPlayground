@@ -12,18 +12,21 @@ class PersonsParentComp extends Component {
     }
   }
   render() {
-    debugger
     let items = this.state.persons.map((item,index)=> 
     <React.Fragment key={index}>
-    <PersonsChildComp name={item.Name}/>
-    <br/>
-    <TasksChildComp  title={item.Name.Title} completed={item.Name.Completed}/>
+    <PersonsChildComp key = {item.name} name={item.Name}/>
+    </React.Fragment>
+    )
+    let items2 = this.state.persons[0].Tasks.map((item,index)=> 
+    <React.Fragment key={index}>
+    <TasksChildComp key = {item.Title} title={item.Title} completed={item.completed}/>
     </React.Fragment>
     )
     return (
       <div>
         <h3>Persons List:</h3>
         <h3>{items}</h3>
+        <h3>{items2}</h3>
       </div>
     );
   }
